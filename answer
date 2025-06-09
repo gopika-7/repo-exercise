@@ -1,0 +1,169 @@
+Instructions
+
+Step 1: Create a new repository on your Github account named "repo-exercise". Ensure that "Add a README file" is selected.
+coder@bb234b965247:~/project$ gh auth login
+? What account do you want to log into? GitHub.com
+? What is your preferred protocol for Git operations? SSH
+? Upload your SSH public key to your GitHub account? /home/coder/.ssh/id_ed25519.pub
+? How would you like to authenticate GitHub CLI? Paste an authentication token
+Tip: you can generate a Personal Access Token here https://github.com/settings/tokens
+The minimum required scopes are 'repo', 'read:org', 'admin:public_key'.
+? Paste your authentication token: ****************************************
+error validating token: missing required scope 'read:org'
+coder@bb234b965247:~/project$ gh auth login
+? What account do you want to log into? GitHub.com
+? What is your preferred protocol for Git operations? HTTPS
+? Authenticate Git with your GitHub credentials? Yes
+? How would you like to authenticate GitHub CLI? Paste an authentication token
+Tip: you can generate a Personal Access Token here https://github.com/settings/tokens
+The minimum required scopes are 'repo', 'read:org', 'workflow'.
+? Paste your authentication token: ************************************
+error validating token: HTTP 401: Bad credentials (https://api.github.com/)
+Try authenticating with:  gh auth login
+coder@bb234b965247:~/project$ 
+coder@bb234b965247:~/project$ gh auth login
+? What account do you want to log into? GitHub.com
+? What is your preferred protocol for Git operations? HTTPS
+? Authenticate Git with your GitHub credentials? Yes
+? How would you like to authenticate GitHub CLI? Paste an authentication token
+Tip: you can generate a Personal Access Token here https://github.com/settings/tokens
+The minimum required scopes are 'repo', 'read:org', 'workflow'.
+? Paste your authentication token: ****************************************
+- gh config set -h github.com git_protocol https
+✓ Configured git protocol
+✓ Logged in as gopika-7
+coder@bb234b965247:~/project$ gh repo clone gopikagwen/repo-exercise
+GraphQL: Could not resolve to a Repository with the name 'gopikagwen/repo-exercise'. (repository)
+coder@bb234b965247:~/project$ gh repo clone gopika-7/repo-exercise
+Cloning into 'repo-exercise'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 895 bytes | 10.00 KiB/s, done.
+coder@bb234b965247:~/project$ cd repo-exercise
+coder@bb234b965247:~/project/repo-exercise$ echo "This is the result of my GitHub exercise" > result.txt
+echo "This is the result of my GitHub exercise" > coder@bb234b965247:~/project/repo-exercise$ echo "This is the result of my GitHub exercise" > result.txt
+coder@bb234b965247:~/project/repo-exercise$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        result.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+coder@bb234b965247:~/project/repo-exercise$ git add result.txt
+coder@bb234b965247:~/project/repo-exercise$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   result.txt
+
+coder@bb234b965247:~/project/repo-exercise$ git commit -m "Successful exercise"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'coder@bb234b965247.(none)')
+coder@bb234b965247:~/project/repo-exercise$ git commit -m "Successful exercise"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'coder@bb234b965247.(none)')
+coder@bb234b965247:~/project/repo-exercise$ git commit -m "Successful exercise"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'coder@bb234b965247.(none)')
+coder@bb234b965247:~/project/repo-exercise$ git push
+Everything up-to-date
+coder@bb234b965247:~/project/repo-exercise$ git commit -m "Successful exercise"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'coder@bb234b965247.(none)')
+coder@bb234b965247:~/project/repo-exercise$ git config --global user.email "gopika27gwen@gmail.com"
+coder@bb234b965247:~/project/repo-exercise$ git config --global user.name "gopika-7"
+coder@bb234b965247:~/project/repo-exercise$ git commit -m "Successful exercise"
+[main 5b623d5] Successful exercise
+ 1 file changed, 1 insertion(+)
+ create mode 100644 result.txt
+coder@bb234b965247:~/project/repo-exercise$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 32 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 325 bytes | 36.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/gopika-7/repo-exercise.git
+   59a5581..5b623d5  main -> main
+coder@bb234b965247:~/project/repo-exercise$ 
+Step 2: Open the Terminal and authenticate using gh (Github CLI):
+"gh auth login"
+
+Step 3: Create an authentication token in your Github account with specified scopes given in the terminal. Copy it from Github and paste it. Verify authorization was successful.
+
+
+Step 4: Clone the repository using its GitHub CLI.
+"gh repo clone <YOUR USERNAME>/<REPOSITORY-NAME> "
+
+Step 5: Move to the repo directory by uecho "This is the result of my GitHub exercise" > result.txt
+sing "cd <REPOSITORY-NAME>"
+
+Step 6: Download and add the"result.txt" to the repository folder on your local machine
+
+Step 7: In the Git terminal, run the "git status" command.
+
+Step 8: Verify that the output shows "result.txt" as an untracked file.
+
+Step 9: Run the command "git add result.txt"
+
+Step 10: Run the "git status" command again.
+
+Step 11: Verify that the output shows "result.txt" as a tracked file.
+
+Step 12: Next, run the "git commit" command and specify the commit message as "Successful exercise"
+
+Step 13: Verify that the output shows "result.txt" with create mode
+
+Step 14: Next, run the "git push" command.
+
+Step 15: Verify that the output pushed successfully.
+
+Step 16: On Github, go to your repository page.
+
+Step 17: Verify that the "result.txt" file is listed. You may need to refresh the page to see the changes. 
